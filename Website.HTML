@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underwater Animal Classification</title>
+    <style>
+         body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 2rem;
+    background-image: url("C:\Users\thesu\Downloads\farm.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: scroll; /* This enables vertical scrolling */
+}
+	body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+	h1 {
+    		font-family: 'Orbitron', sans-serif;
+    		font-size: 4rem;
+    color: #ffffff;
+    text-shadow: 0 0 5px #00ffff , 0 0 10px #00ffff , 0 0 15px #00ffff , 0 0 20px #00ffff ;
+    animation: fadeIn 4s;
+	}
+
+	@keyframes fadeIn {
+    		from { opacity: 0; }
+    	to { opacity: 1; }
+	}
+
+
+        /* For larger screens, display the first three boxes as grid */
+        @media (min-width: 768px) {
+            main {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-gap: 2rem;
+            }
+
+            .additional-box {
+                display: block; /* Display additional boxes below the first three */
+            }
+        }
+	video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            object-fit: cover;
+        }
+
+      header {
+    	text-align: center;
+    	padding: 2rem 0;
+ 	}-
+	
+	
+	
+
+      
+/* Adjust the main selector to display grid items side by side */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    grid-auto-rows: minmax(100px, auto); /* Add this line to set the minimum height for each grid item */
+}
+
+/* Add the following CSS to style the new game container */
+#content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+#game-container {
+    grid-column: 1 / span 2; /* Make the game container span two columns */
+}
+
+.additional-box {
+    display: none; /* Initially hide additional boxes */
+}
+
+/* For larger screens, display the first three boxes as grid */
+@media (min-width: 768px) {
+    .additional-box {
+        display: block; /* Display additional boxes below the first three */
+    }
+}
+	
+	.container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      
+      padding: 20px;
+    }
+	
+.column {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      margin: 5px;
+      background-color: #fff;
+    }
+
+
+        .description {
+	
+		 flex: 1;
+      padding: 10px;
+	    text-align: justify;
+	     font-family: 'Roboto Mono', monospace;
+            background-color: #fff;
+            margin: 5px;
+            border-radius: 4px;
+	     border: 5px solid transparent;
+        border-image: linear-gradient(45deg,  #00ffff,  #00ffff, #00ffff, #00ffff) 2;
+            box-shadow: 0 2px 6px rgba(0, 0, 255, 0.5);
+	   
+        }
+@keyframes fadeIn {
+    		from { opacity: 0; }
+    	to { opacity: 1; }
+	}
+
+        #upload-form {
+	
+	 flex: 1;
+      padding: 10px;
+	    text-align: justify;
+	    font-family: 'Roboto Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            margin: 5px;
+            border-radius: 4px;
+	    border: 5px solid transparent;
+        border-image: linear-gradient(45deg, #00ffff , #00ffff, #00ffff, #00ffff) 2;
+            box-shadow: 0 2px 6px rgba(0, 0, 255, 0.5);
+	   
+        }
+@keyframes fadeIn {
+    		from { opacity: 0; }
+    	to { opacity: 1; }
+	}
+
+        #image-input {
+            margin-bottom: 1rem;
+        }
+
+        #result-container {  flex: 1;
+  padding: 10px;
+  font-family: 'Roboto Mono', monospace;
+  text-align: justify;
+  background-color: #fff;
+  margin: 5px;
+  border-radius: 4px;
+  border: 5px solid transparent;
+  border-image: linear-gradient(45deg, #00ffff, #00ffff, #00ffff, #00ffff) 2;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+  
+}
+@keyframes fadeIn {
+    		from { opacity: 0; }
+    	to { opacity: 1; }
+	}
+
+        #result {
+            margin-bottom: 1rem;
+        }
+
+	.description {
+            animation: popUp 1s;
+            opacity: 20;
+	    animation-fill-mode: forwards;
+        }
+
+	#upload-form {
+            animation: popUp 2s;
+            opacity: 20;
+	    animation-fill-mode: forwards;
+        }
+        #result-container {
+            animation: popUp 3s;
+            opacity: 20;
+	    animation-fill-mode: forwards;
+        }
+
+	 /* Add some space below the columns */
+    .spacer {
+      margin-bottom: 20px;
+    }
+
+	.spacer2 {
+      margin-bottom: 20px;
+    }
+	
+	
+	
+	
+
+.description:hover, #upload-form:hover, #result-container:hover {
+    transform: perspective(500px) rotateX(5deg) rotateY(5deg);
+ border-image: linear-gradient(45deg, #00ffff , #00ffff, #00ffff, #00ffff) 2;
+     box-shadow: 0 2px 6px rgba(0, 0, 255, 0.7), 0 10px 20px rgba(0, 0, 255, 0.5), 0 20px 40px rgba(0, 0, 255, 0.4);
+}
+	 
+
+        @keyframes popUp {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+    <header>
+	  <video autoplay muted loop id="background-video">
+        <source src="file:///C:/Users/Aakash%20N/Downloads/WhatsApp%20Video%202024-01-13%20at%2013.15.46_50ecd387.mp4" type="video/mp4">
+	</video>
+        <h1>Underwater Animal Classification</h1>
+    </header>
+    <main>
+       <div class="container">
+        <div class="description">
+            <p>Welcome to our innovative project on Underwater Animal Identification and Classification! In response to the growing demand for ecological surveillance and biodiversity monitoring, we've developed a cutting-edge solution that leverages the power of hybrid classical-quantum algorithms.</p>
+        </div>
+        <div id="upload-form">
+            <input type="file" accept="image/*" id="image-input">
+            <button onclick="classifyImage()">Classify</button>
+        </div>
+
+        <div id="result-container">
+            <h2>Classification Result:</h2>
+            <p id="result"></p>
+            <img id="classified-image" alt="Classified Image">
+        </div>
+	 <div class="spacer"></div>
+
+	 
+        
+     <div class="spacer2"></div>
+	 <div style="width:800px; margin:0 auto;">
+	<div id="game">
+        <div id="result"></div>
+        <div id="highest-score"></div>
+        <br>
+        <div>Choose an animal:</div>
+        <form id="animal-list">
+            <input type="hidden" id="selected-animal" value="">
+            <img id="selected-image" src="" alt="">
+            <select onchange="updateSelectedAnimal(this.value)">
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+                <option value="bird">Bird</option>
+            </select>
+        </form>
+        <br>
+        <div>Enter your guess:</div>
+        <form id="guess-form">
+            <input type="text" id="guess-input">
+            <button type="submit" onclick="submitGuess()">Submit</button>
+        </form>
+    </div>
+	
+	
+    </main>
+
+    <script>
+        function classifyImage() {
+            // Implement logic to send the image to the backend for classification
+            // Update the result and display the classified image
+            // This involves making an API call to your backend
+            // and updating the #result and #classified-image elements
+            // with the classification result and the image respectively.
+        }
+	  function updateSelectedAnimal(animal) {
+            const images = {
+                cat: 'file:///C:/Users/Aakash%20N/Downloads/IMG-20240113-WA0008.jpg',
+                dog: 'file:///C:/Users/Aakash%20N/Downloads/IMG-20240113-WA0007.jpg',
+                bird: 'file:///C:/Users/Aakash%20N/Downloads/IMG-20240113-WA0006.jpg'
+            };
+            document.getElementById('selected-animal').value = animal;
+            document.getElementById('selected-image').src = images[animal];
+        }
+
+        function submitGuess() {
+            const animal = document.getElementById('selected-animal').value;
+            const guess = document.getElementById('guess-input').value;
+            // ... (game logic) ...
+        }
+
+	let index = 0;
+        let elements = document.querySelectorAll('.description, #upload-form, #result-container');
+        const interval = setInterval(() => {
+            if (index < elements.length) {
+                elements[index].style.opacity = '1';
+                index++;
+            } else {
+                clearInterval(interval);
+
+    </script>
+</body>
+</html>
