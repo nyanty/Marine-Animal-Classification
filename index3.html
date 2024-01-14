@@ -84,6 +84,28 @@
       cursor: pointer;
       z-index: 3; 
     }
+
+	  h1 {
+    		font-family: 'Orbitron', sans-serif;
+    		font-size: 4rem;
+    color: #ffffff;
+    text-shadow: 0 0 5px #0058a4 , 0 0 10px #00ffff , 0 0 15px #00ffff , 0 0 20px #00ffff ;
+    animation: fadeIn 4s;
+    margin-bottom: 70px;
+	}
+
+	@keyframes fadeIn {
+    		from { opacity: 0; }
+    	to { opacity: 1; }
+	}
+
+    h2 {
+        margin-bottom: 50px;
+    }
+
+    #heading {
+      z-index: 2;
+    }
   </style>
   <script>
     function checkSelection() {
@@ -107,7 +129,7 @@
 </head>
 <body>
   <div id="overlay"></div>
-
+<h1 id="heading">Your Main Heading</h1>
   <div id="container">
     <div id="image-container">
       <img id="centered-image" src="clam.jpg" alt="Top Image"> 
