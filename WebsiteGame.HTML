@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      overflow: hidden; /* Hide the overflow to prevent scrollbars */
+    }
+
+    h1 {
+    		font-family: 'Orbitron', sans-serif;
+    		font-size: 4rem;
+    color: #ffffff;
+    text-shadow: 0 0 5px #00ffff , 0 0 10px #00ffff , 0 0 15px #00ffff , 0 0 20px #00ffff ;
+    animation: fadeIn 4s;
+    margin-bottom: 70px;
+	}
+
+	@keyframes fadeIn {
+    		from { opacity: 0; }
+    	to { opacity: 1; }
+	}
+
+    h2 {
+        margin-bottom: 50px;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for the overlay */
+      z-index: 1;
+    }
+
+    #background-gif {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    #heading {
+      z-index: 2;
+    }
+
+    #container {
+      display: flex;
+      width: 100%;
+      position: relative;
+      z-index: 2; /* Ensure the container is above the overlay */
+    }
+
+    #image-container {
+      width: 50%;
+    }
+
+    #centered-image {
+      display: block;
+      margin: 0 auto;
+      border: 2px solid white; /* Add a border around the image */
+      max-width: 100%; /* Adjust the maximum width of the image */
+      height: auto;
+    }
+
+    #dropdown-container {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #dropdown-heading {
+      margin-bottom: 50px;
+    }
+
+    #dropdown {
+      width: 80%; /* Adjust the width of the dropdown */
+      background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
+      border: none; /* Remove the default border */
+      padding: 10px; /* Add padding to the dropdown */
+      border-radius: 5px; /* Add border-radius for rounded corners */
+      color: white;
+    }
+
+    #message {
+      margin-top: 20px;
+      text-align: center;
+      z-index: 3; /* Ensure the message is above the overlay */
+    }
+  </style>
+  <script>
+    function checkSelection() {
+      var dropdown = document.getElementById('dropdown');
+      var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+      var message = document.getElementById('message');
+
+      // Replace 'correctOption' with the correct option
+      var correctOption = 'Option4';
+
+      if (selectedOption === correctOption) {
+        message.innerHTML = 'Correct answer!<br><br>Model Predicted: <br>Nudibranch';
+      } else {
+        message.innerHTML = 'Incorrect answer<br><br>Model Predicted: <br>Nudibranch';
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="overlay"></div>
+  <img id="background-gif" src="gfps_wt_herp_Loop_2s.gif" alt="Background GIF"> <!-- Replace with your background GIF URL -->
+
+  <h1 id="heading">Your Main Heading</h1>
+
+  <div id="container">
+    <div id="image-container">
+      <img id="centered-image" src="159864782_2ed585d629_o.jpg" alt="Top Image"> <!-- Replace with your top image URL -->
+    </div>
+
+    <div id="dropdown-container">
+      <h2 id="dropdown-heading">Guess The Animal</h2>
+      <select id="dropdown" onchange="checkSelection()">
+        <option value="" disabled selected hidden>Select an option</option>
+        <option value="Option1">Shark</option>
+        <option value="Option2">Sea Urchin</option>
+        <option value="Option3">Shrimp</option>
+        <option value="Option4">Nudibranch</option>
+        <option value="Option5">Squid</option>
+        <!-- Add more options as needed -->
+      </select>
+      <div id="message"></div>
+    </div>
+  </div>
+
+</body>
+</html>
