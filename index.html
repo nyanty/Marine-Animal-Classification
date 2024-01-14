@@ -72,6 +72,17 @@
       margin-top: 20px;
       z-index: 3; 
     }
+
+    #newPageButton {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #0058a4;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
   <script>
     function checkSelection() {
@@ -86,6 +97,10 @@
       } else {
         message.innerHTML = 'Incorrect answer';
       }
+    }
+
+	function loadNewPage() {
+      window.location.href = 'index2.html';
     }
   </script>
 </head>
@@ -104,11 +119,12 @@
         <option value="Option2">Shrimp</option>
 	<option value="Option1">Sea Urchin</option>
         <option value="Option2">Nudibranch</option>
+	<div id="message"></div>
       </select>
     </div>
   </div>
 
-  <div id="message"></div>
+  <button id="newPageButton" onclick="loadNewPage()">Next Image</button>
 </body>
 </html>
 
