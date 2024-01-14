@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -15,25 +14,9 @@
       align-items: center;
       justify-content: center;
       color: white;
-      overflow: hidden;
-    }
-
-    h1 {
-    		font-family: 'Orbitron', sans-serif;
-    		font-size: 4rem;
-    color: #ffffff;
-    text-shadow: 0 0 5px #00ffff , 0 0 10px #00ffff , 0 0 15px #00ffff , 0 0 20px #00ffff ;
-    animation: fadeIn 4s;
-    margin-bottom: 70px;
-	}
-
-	@keyframes fadeIn {
-    		from { opacity: 0; }
-    	to { opacity: 1; }
-	}
-
-    h2 {
-        margin-bottom: 50px;
+      overflow: hidden; 
+      background: url('your-background-image.jpg') no-repeat center center fixed; 
+      background-size: cover;
     }
 
     #overlay {
@@ -42,22 +25,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.5); 
       z-index: 1;
-    }
-
-    #background-gif {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-
-    #heading {
-      z-index: 2;
     }
 
     #container {
@@ -74,21 +43,11 @@
     #centered-image {
       display: block;
       margin: 0 auto;
-      border: 2px solid white;
-      max-width: 100%; 
+      border: 2px solid white; 
+      max-width: 100%;
       height: auto;
     }
 
-    #background-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-	  
     #dropdown-container {
       width: 50%;
       display: flex;
@@ -98,87 +57,58 @@
     }
 
     #dropdown-heading {
-      margin-bottom: 50px;
+      margin-bottom: 10px;
     }
 
     #dropdown {
       width: 80%; 
-      background-color: rgba(0, 0, 0, 0.5); 
-      border: none; 
+      background-color: rgba(255, 255, 255, 0.5); 
+      border: none;
       padding: 10px; 
-      border-radius: 5px;
-      color: white;
+      border-radius: 5px; 
     }
 
     #message {
       margin-top: 20px;
-      text-align: center;
-      z-index: 3; 
-    }
-
-    #newPageButton {
-      margin-top: 20px;
-      padding: 10px;
-      background-color: #4c5baf;
-      color: white;
-      text-decoration: none;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
       z-index: 3; 
     }
   </style>
-	
   <script>
     function checkSelection() {
       var dropdown = document.getElementById('dropdown');
       var selectedOption = dropdown.options[dropdown.selectedIndex].value;
       var message = document.getElementById('message');
 
-      var correctOption = 'Option4';
+      var correctOption = 'Option1';
 
       if (selectedOption === correctOption) {
-        message.innerHTML = 'Correct answer!<br><br>Model Predicted: <br>Nudibranch';
+        message.innerHTML = 'Correct option selected!';
       } else {
-        message.innerHTML = 'Incorrect answer<br><br>Model Predicted: <br>Nudibranch';
+        message.innerHTML = 'Incorrect option selected. Please try again.';
       }
-    }
-
-    function loadNewPage() {
-      window.location.href = 'index2.html';
     }
   </script>
 </head>
 <body>
   <div id="overlay"></div>
-  <video id="background-video" loop muted autoplay>
-    <source src="background.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <h1 id="heading">Interactive Guessing Game</h1>
 
   <div id="container">
     <div id="image-container">
-      <img id="centered-image" src="clam.jpg" alt="Top Image"> 
+      <img id="centered-image" src="your-top-image.jpg" alt="Top Image"> 
     </div>
 
     <div id="dropdown-container">
-      <h2 id="dropdown-heading">Guess The Animal</h2>
+      <h2 id="dropdown-heading">Dropdown Heading</h2>
       <select id="dropdown" onchange="checkSelection()">
-        <option value="" disabled selected hidden>Select an option</option>
-        <option value="Option1">Nudibranch</option>
-        <option value="Option2">Sea Urchin</option>
-        <option value="Option3">Shrimp</option>
-        <option value="Option4">Clam</option>
-        <option value="Option5">Squid</option>
+        <option value="Option1">Option 1</option>
+        <option value="Option2">Option 2</option>
+	<option value="Option1">Option 1</option>
+        <option value="Option2">Option 2</option>
       </select>
-      <div id="message"></div>
     </div>
   </div>
 
-<button id="newPageButton" onclick="loadNewPage()">Next Image</button>
-	
+  <div id="message"></div>
 </body>
 </html>
 
