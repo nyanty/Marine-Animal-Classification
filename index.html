@@ -90,7 +90,7 @@
       var selectedOption = dropdown.options[dropdown.selectedIndex].value;
       var message = document.getElementById('message');
 
-      var correctOption = 'Option1';
+      var correctOption = 'Option3';
 
       if (selectedOption === correctOption) {
         message.innerHTML = 'Correct answer!';
@@ -117,8 +117,8 @@
       <select id="dropdown" onchange="checkSelection()">
         <option value="Option1">Sea Horse</option>
         <option value="Option2">Shrimp</option>
-	<option value="Option1">Sea Urchin</option>
-        <option value="Option2">Nudibranch</option>
+	<option value="Option3">Sea Urchin</option>
+        <option value="Option4">Nudibranch</option>
 	<div id="message"></div>
       </select>
     </div>
