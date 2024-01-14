@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      overflow: hidden; 
+      background: url('water.jpg') no-repeat center center fixed; 
+      background-size: cover;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); 
+      z-index: 1;
+    }
+
+    #container {
+      display: flex;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    #image-container {
+      width: 50%;
+    }
+
+    #centered-image {
+      display: block;
+      margin: 0 auto;
+      border: 4px solid white; 
+      max-width: 100%;
+      height: auto;
+    }
+
+    #dropdown-container {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #dropdown-heading {
+      margin-bottom: 10px;
+    }
+
+    #dropdown {
+      width: 80%; 
+      background-color: rgba(255, 255, 255, 0.5); 
+      border: none;
+      padding: 10px; 
+      border-radius: 5px; 
+    }
+
+    #message {
+      margin-top: 20px;
+      z-index: 3; 
+    }
+
+    #newPageButton {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #0058a4;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 3; 
+    }
+  </style>
+  <script>
+    function checkSelection() {
+      var dropdown = document.getElementById('dropdown');
+      var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+      var message = document.getElementById('message');
+
+      var correctOption = 'Option2';
+
+      if (selectedOption === correctOption) {
+        message.innerHTML = 'Correct answer!';
+      } else {
+        message.innerHTML = 'Incorrect answer';
+      }
+    }
+
+	function loadNewPage() {
+      window.location.href = 'index5.html';
+    }
+  </script>
+</head>
+<body>
+  <div id="overlay"></div>
+
+  <div id="container">
+    <div id="image-container">
+      <img id="centered-image" src="whale.jpg" alt="Top Image"> 
+    </div>
+
+    <div id="dropdown-container">
+      <h2 id="dropdown-heading">Guess The Animal</h2>
+      <select id="dropdown" onchange="checkSelection()">
+        <option value="Option1">Dolphin</option>
+        <option value="Option2">Whale</option>
+	<option value="Option3">Shark</option>
+        <option value="Option4">Sea Ray</option>
+	<div id="message"></div>
+      </select>
+    </div>
+  </div>
+
+  <button id="newPageButton" onclick="loadNewPage()">Next Image</button>
+</body>
+</html>
