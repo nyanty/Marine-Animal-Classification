@@ -15,7 +15,7 @@
       align-items: center;
       justify-content: center;
       color: white;
-      overflow: hidden; /* Hide the overflow to prevent scrollbars */
+      overflow: hidden;
     }
 
     h1 {
@@ -42,7 +42,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for the overlay */
+      background: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
 
@@ -64,7 +64,7 @@
       display: flex;
       width: 100%;
       position: relative;
-      z-index: 2; /* Ensure the container is above the overlay */
+      z-index: 2;
     }
 
     #image-container {
@@ -74,8 +74,8 @@
     #centered-image {
       display: block;
       margin: 0 auto;
-      border: 2px solid white; /* Add a border around the image */
-      max-width: 100%; /* Adjust the maximum width of the image */
+      border: 2px solid white;
+      max-width: 100%; 
       height: auto;
     }
 
@@ -92,27 +92,38 @@
     }
 
     #dropdown {
-      width: 80%; /* Adjust the width of the dropdown */
-      background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
-      border: none; /* Remove the default border */
-      padding: 10px; /* Add padding to the dropdown */
-      border-radius: 5px; /* Add border-radius for rounded corners */
+      width: 80%; 
+      background-color: rgba(0, 0, 0, 0.5); 
+      border: none; 
+      padding: 10px; 
+      border-radius: 5px;
       color: white;
     }
 
     #message {
       margin-top: 20px;
       text-align: center;
-      z-index: 3; /* Ensure the message is above the overlay */
+      z-index: 3; 
+    }
+
+    #newPageButton {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
   </style>
+	
   <script>
     function checkSelection() {
       var dropdown = document.getElementById('dropdown');
       var selectedOption = dropdown.options[dropdown.selectedIndex].value;
       var message = document.getElementById('message');
 
-      // Replace 'correctOption' with the correct option
       var correctOption = 'Option4';
 
       if (selectedOption === correctOption) {
@@ -121,17 +132,21 @@
         message.innerHTML = 'Incorrect answer<br><br>Model Predicted: <br>Nudibranch';
       }
     }
+
+    function loadNewPage() {
+      window.location.href = 'index2.html';
+    }
   </script>
 </head>
 <body>
   <div id="overlay"></div>
-  <img id="background-gif" src="gfps_wt_herp_Loop_2s.gif" alt="Background GIF"> <!-- Replace with your background GIF URL -->
+  <img id="background-gif" src="gfps_wt_herp_Loop_2s.gif" alt="Background GIF"> 
 
   <h1 id="heading">Your Main Heading</h1>
 
   <div id="container">
     <div id="image-container">
-      <img id="centered-image" src="159864782_2ed585d629_o.jpg" alt="Top Image"> <!-- Replace with your top image URL -->
+      <img id="centered-image" src="159864782_2ed585d629_o.jpg" alt="Top Image"> 
     </div>
 
     <div id="dropdown-container">
@@ -143,11 +158,12 @@
         <option value="Option3">Shrimp</option>
         <option value="Option4">Nudibranch</option>
         <option value="Option5">Squid</option>
-        <!-- Add more options as needed -->
       </select>
       <div id="message"></div>
     </div>
   </div>
 
+<button id="newPageButton" onclick="loadNewPage()">Next Image</button>
+	
 </body>
 </html>
