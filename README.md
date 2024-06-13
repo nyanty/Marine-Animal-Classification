@@ -1,11 +1,10 @@
-# QCNN Marine Animal Classification
+# CNN Marine Animal Classification
 
 ## Introduction
-This program uses a Quantum Convolutional Neural Network (QCNN) to identify aquatic creatures. Explore the intersection of quantum computing and image classification!
+This program uses a Convolutional Neural Network (CNN) to identify aquatic creatures. Explore the intersection of quantum computing and image classification!
 
 ## Prerequisites
 - Python 3.x
-- Quantum Computing Environment (e.g., Qiskit)
 - Dependencies: tensorflow, torch connector, other common machine learning requirements.
 - Dataset to be downloaded from the zip folder provided (Marine Data) from the provided Google drive link.
 
